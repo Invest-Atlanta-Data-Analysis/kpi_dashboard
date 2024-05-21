@@ -1,0 +1,530 @@
+
+---
+title: "Invest Atlanta KPI Dashboard"
+subtitle: "Data last updated 5/17/24"
+format: 
+  dashboard:
+    theme: cerulean 
+---
+
+# Small Business Investment
+
+## Row {height="30%"}
+
+``` {r}
+#| content: valuebox
+#| title: "Direct Investment"
+list(
+  icon = "piggy-bank", 
+  color = "success", 
+  value = "$3.5 Million"
+  )
+```
+
+```{r}
+#| content: valuebox
+#| title: "Small Businesses Supported"
+list(
+  icon = "award-fill",
+  color = "primary",
+  value = 571
+)
+```
+
+
+``` {r}
+#| content: valuebox
+#| title: "Disinvested Neighborhoods"
+list(
+  icon = "globe-americas", 
+  color = "success", 
+  value = "31%"
+  )
+```
+
+
+``` {r}
+#| content: valuebox
+#| title: "Small Business Loans and Grants Awarded"
+list(
+  icon = "door-open", 
+  color = "primary", 
+  value = "39"
+  )
+```
+
+
+## Row {height="70%"}
+
+```{r, include = FALSE}
+
+library(tidyverse)
+library(dplyr)
+library(usethis)
+library(devtools)
+library(ggplot2)
+library(ggtext)
+library(ggrepel)
+library(ggthemes)
+library(extrafont)
+library(readxl)
+library(rmarkdown)
+library(prettydoc)
+library(knitr)
+library(kableExtra)
+library(sf)
+library(RefManageR)
+library(writexl)
+library(shiny)
+library(bslib)
+
+
+plot_theme <- function() {
+  font <- "Arial"
+  theme_minimal() %+replace%
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line = element_line(color = "#28282D", linewidth = 0.3),
+    plot.title = element_text(
+      family = font,
+      size = 20,
+      face = "bold",
+      hjust = 0,
+      vjust = 2),
+    plot.subtitle = element_text(
+      family = font,
+      size = 12,
+      hjust = 0),
+    axis.title = element_text(
+      family = font,
+      size = 20),
+    axis.text = element_text(
+      family = font,
+      size = 16) ) 
+}
+
+
+```
+
+``` {r}
+#| title: "Small Business Investment"
+sb_inv <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(3476937, 6000000))
+
+sb_support <- data.frame(name = c("2024 YTD", "2024 Goal"), support = c(571, 1500))
+
+sb_ta <- data.frame(name = c("2024 YTD", "2024 Goal"), hours = c(746.6, 2750))
+
+sbinv_plot <- ggplot(sb_inv) +
+  geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Small Business Investment") +
+  scale_x_discrete(name = "Small Business Investment", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Direct Investment ($)", limits = c(0,6100000), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  plot_theme()
+sbinv_plot
+```
+
+
+
+``` {r}
+#| title: "Small Business Support"
+sbsupport_plot <- ggplot(sb_support) +
+  geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Small Businesses Supported") +
+  scale_x_discrete(name = "Small Business Support", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Number of Small Businesses", limits = c(0,1600), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  plot_theme()
+sbsupport_plot
+```
+
+``` {r}
+#| title: "Technical Assistance"
+sbta_plot <- ggplot(sb_ta) +
+  geom_col(aes(x = name, y = hours, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Free Technical Assistance for Small Businesses") +
+  scale_x_discrete(name = "Technical Assistance", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Hours of TA Provided", limits = c(0,3000), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#002d56", "#009ddc")) +
+  plot_theme()
+sbta_plot
+```
+
+
+
+
+
+# Neighborhood Investment
+
+
+## Row {height="30%"}
+
+``` {r}
+#| content: valuebox
+#| title: "Neighborhood Development Investment"
+list(
+  icon = "piggy-bank", 
+  color = "success", 
+  value = "$71.6 Million"
+  )
+```
+
+
+```{r}
+#| content: valuebox
+#| title: "NMTC Financing"
+list(
+  icon = "award-fill",
+  color = "primary",
+  value = "$26 Million"
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "C-PACE Clean Energy Investment"
+list(
+  icon = "globe-americas",
+  color = "success",
+  value = "$6.2 Million"
+)
+```
+
+
+``` {r}
+#| content: valuebox
+#| title: "TAD Grants Awarded"
+list(
+  icon = "door-open", 
+  color = "primary", 
+  value = "5.25 Million"
+  )
+```
+
+
+## Row {height="70%"}
+
+``` {r}
+#| title: "Investment in Disinvested Neighborhoods"
+nb_dn <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(61.5, 50))
+
+nb_tad <- data.frame(name = c("2024 YTD", "2024 Goal"), support = c(27710665, 130000000))
+
+nb_res <- data.frame(name = c("2024 YTD", "2024 Goal"), hours = c(9822, 5000))
+
+nbdn_plot <- ggplot(nb_dn) +
+  geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Small Business Investment") +
+  scale_x_discrete(name = "Investment in Disinvested Neighborhoods", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Percentage of Investment", limits = c(0,100), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  plot_theme()
+```
+
+
+
+``` {r}
+#| title: "Leveraged Capital via TAD Program"
+nbtad_plot <- ggplot(nb_tad) +
+  geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Small Businesses Supported") +
+  scale_x_discrete(name = "TAD Leveraged Capital", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Leveraged Capital Investment ($)", limits = c(0,131000000), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  plot_theme()
+nbtad_plot
+```
+
+``` {r}
+#| title: "Residents Served through Social Impact Projects"
+nbres_plot <- ggplot(nb_res) +
+  geom_col(aes(x = name, y = hours, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Free Technical Assistance for Small Businesses") +
+  scale_x_discrete(name = "Residents Served through AEMI", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Atlanta Residents", limits = c(0,10000), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#002d56", "#009ddc")) +
+  plot_theme()
+nbres_plot
+```
+![](TAD_Approvals_2024v1.png){width=85%}
+
+# Housing
+
+
+## Row {height="30%"}
+
+``` {r}
+#| content: valuebox
+#| title: "Total Capital Invested in Housing Developments"
+list(
+  icon = "piggy-bank", 
+  color = "success", 
+  value = "$147 Million"
+  )
+```
+
+```{r}
+#| content: valuebox
+#| title: "Affordable Housing Units Financed"
+list(
+  icon = "house-add",
+  color = "primary",
+  value = 417
+)
+```
+
+
+``` {r}
+#| content: valuebox
+#| title: "Homeownership Incentives (OOR and DPA)"
+list(
+  icon = "door-open", 
+  color = "success", 
+  value = 61
+  )
+```
+
+
+``` {r}
+#| content: valuebox
+#| title: "Low Income Units Financed"
+list(
+  icon = "house-door", 
+  color = "primary", 
+  value = 331
+  )
+```
+
+## Row {height="70%"}
+
+``` {r}
+#| title: "Affordable Housing Units Financed"
+hs_ahu <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(417, 2600))
+
+hs_ho <- data.frame(name = c("2024 YTD", "2024 Goal"), support = c(61, 175))
+
+hsahu_plot <- ggplot(hs_ahu) +
+  geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Small Business Investment") +
+  scale_x_discrete(name = "Affordable Housing Funded", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Number of Affordable Housing Units", limits = c(0,3000), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  plot_theme()
+hsahu_plot
+```
+
+
+
+``` {r}
+#| title: "Homeownership Incentives Funded"
+hsho_plot <- ggplot(hs_ho) +
+  geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Small Businesses Supported") +
+  scale_x_discrete(name = "Homeownership Initiatives", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Number of Homeowners Funded", limits = c(0,200), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  plot_theme()
+hsho_plot
+```
+
+```{r}
+#| title: "Year-Over-Year Percentage Affordability"
+units <- data.frame(years = c('2018','2019', '2020', '2021', '2022', '2023', '2024'),
+                    aff = c(57.3, 55.5, 83.7, 83.0, 94.6, 85.9, 99.7))
+housing_aff <- ggplot(units) +
+  geom_col(aes(x=years, y=aff), fill = "#009DDC", color = "#000000") +
+  scale_y_continuous(name = "Affordable Housing Funded (%)", expand = c(0,0)) +
+  scale_x_discrete(name = "Year") +
+  plot_theme()
+housing_aff
+```
+
+
+
+# Jobs & Employment
+
+## Row {height="30%"}
+
+``` {r}
+#| content: valuebox
+#| title: "Closed Business Development Projects"
+list(
+  icon = "door-open", 
+  color = "primary", 
+  value = 16
+  )
+```
+
+``` {r}
+#| content: valuebox
+#| title: "Total Jobs Impact"
+list(
+  icon = "globe-americas", 
+  color = "success", 
+  value = 1555
+  )
+```
+
+```{r}
+#| content: valuebox
+#| title: "New Good Jobs Created"
+list(
+  icon = "piggy-bank",
+  color = "primary",
+  value = 1229
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Business Consultations"
+list(
+  icon = "file-person",
+  color = "success",
+  value = 541
+)
+```
+
+
+## Row {height="70%"}
+
+``` {r}
+#| title: "Business Development Projects"
+
+biz_dev <- data.frame(name = c("2024 YTD", "2024 Goal"), closed = c(16, 30))
+
+new_jobs <- data.frame(name = c("2024 YTD", "2024 Goal"), jobs = c(1555, 5000))
+
+good_jobs <- data.frame(name = c("2024 YTD", "2024 Goal"), good = c(1229, 1500))
+
+bizdev_plot <- ggplot(biz_dev) +
+  geom_col(aes(x = name, y = closed, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Small Business Investment") +
+  scale_x_discrete(name = "Business Development", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Number of Closed Projects", limits = c(0,35), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  plot_theme()
+bizdev_plot
+```
+
+
+
+``` {r}
+#| title: "Job Creation & Retention"
+newjobs_plot <- ggplot(new_jobs) +
+  geom_col(aes(x = name, y = jobs, fill = name), color = "#000000", show.legend = FALSE) +
+  scale_x_discrete(name = "Employment Impact", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Number of Jobs", limits = c(0,5000), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  plot_theme()
+newjobs_plot
+```
+
+
+``` {r}
+#| title: "Good Jobs Created"
+goodjobs_plot <- ggplot(good_jobs) +
+  geom_col(aes(x = name, y = good, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Small Businesses Supported") +
+  scale_x_discrete(name = "New Good Jobs ($40,000+/yr and full benefits)", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Number of Good Jobs", limits = c(0,1500), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#002d56", "#009ddc")) +
+  plot_theme()
+goodjobs_plot
+```
+
+
+
+# Invest Atlanta Totals
+
+## Row {height="30%"}
+
+``` {r}
+#| content: valuebox
+#| title: "Total Capital Investment"
+list(
+  icon = "piggy-bank", 
+  color = "primary", 
+  value = "$278 Million"
+  )
+```
+
+```{r}
+#| content: valuebox
+#| title: "Total Economic Impact"
+list(
+  icon = "award-fill",
+  color = "success",
+  value = "$618 Million"
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Investment in Disinvested Neighborhoods"
+list(
+  icon = "globe-americas",
+  color = "primary",
+  value = "61.5%"
+)
+```
+
+``` {r}
+#| content: valuebox
+#| title: "People Engaged via Community Events"
+list(
+  icon = "file-person", 
+  color = "success", 
+  value = 3754
+  )
+```
+
+
+## Row {height="70%"}
+
+``` {r}
+#| title: "Total Capital Investment"
+
+tot_inv <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(277943747.69, 1487100000))
+
+ce_events <- data.frame(name = c("2024 YTD", "2024 Goal"), people = c(3754, 9000))
+
+totinv_plot <- ggplot(tot_inv) +
+  geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
+  #ggtitle("Small Business Investment") +
+  scale_x_discrete(name = "Total Capital Investment", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "$ Invested", limits = c(0,1500000000), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  plot_theme()
+totinv_plot
+```
+
+
+
+``` {r}
+#| title: "Community Engagement"
+events_plot <- ggplot(ce_events) +
+  geom_col(aes(x = name, y = people, fill = name), color = "#000000", show.legend = FALSE) +
+  scale_x_discrete(name = "Community Engagement", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Number of Event Attendees", limits = c(0,10000), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  plot_theme()
+events_plot
+```
+
+![](2024_jan-apr_wins.png){width=94%}
+
