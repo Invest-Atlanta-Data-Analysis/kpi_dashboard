@@ -253,7 +253,7 @@ nbres_plot <- ggplot(nb_res) +
   plot_theme()
 nbres_plot
 ```
-![](TAD_Approvals_2024v1.png){width=85%}
+![Click to expand](TAD_Approvals_2024v1.png){width=85%}
 
 # Housing
 
@@ -526,5 +526,5 @@ events_plot <- ggplot(ce_events) +
 events_plot
 ```
 
-![](2024_jan-apr_wins.png){width=94%}
+![Click to expand](2024_jan-apr_wins.png){width=85%}
 
