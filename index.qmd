@@ -253,7 +253,7 @@ nbres_plot <- ggplot(nb_res) +
   plot_theme()
 nbres_plot
 ```
-![Click to expand](TAD_Approvals_2024v1.png){width=85%}
+![Click to expand](tad_approvals_20240523_v3.png){width=85%}
 
 # Housing
 
@@ -447,7 +447,7 @@ goodjobs_plot
 
 
 
-# Invest Atlanta Totals
+# Citywide Impact
 
 ## Row {height="30%"}
 
