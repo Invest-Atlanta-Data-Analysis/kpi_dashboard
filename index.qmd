@@ -1,6 +1,6 @@
 
 ---
-title: "Invest Atlanta KPI Dashboard"
+title: "Invest Atlanta Impact Dashboard"
 subtitle: "2024 Data Year to Date"
 format: 
   dashboard:
@@ -494,8 +494,6 @@ list(
 
 ## Row {height="70%"}
 
-![Click to expand](ce_map_20240614.png){width=85%}
-
 ``` {r}
 #| title: "Total Capital Investment"
 
@@ -525,7 +523,7 @@ events_plot <- ggplot(ce_events) +
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
   plot_theme()
-#events_plot
+events_plot
 ```
 
 ![Click to expand](wins_map_20240610.png){width=85%}
