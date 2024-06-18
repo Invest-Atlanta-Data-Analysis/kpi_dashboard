@@ -253,7 +253,7 @@ nbres_plot <- ggplot(nb_res) +
   plot_theme()
 nbres_plot
 ```
-![Click to expand](tad_approvals_20240523_v3.png){width=85%}
+![Click to expand](tad_approvals_20240618.png){width=83%}
 
 # Housing
 
