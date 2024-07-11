@@ -526,6 +526,6 @@ events_plot <- ggplot(ce_events) +
 events_plot
 ```
 
-![Click to expand](wins_map_20240610.png){width=85%}
+![Click to expand](wins_map_20240711.png){width=85%}
 
 
