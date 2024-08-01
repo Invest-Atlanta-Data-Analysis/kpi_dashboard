@@ -3,77 +3,94 @@ title: "Invest Atlanta Monthly KPI Update"
 format:
   html: 
     toc: false
-    theme: cerulean
+    theme: superhero
 ---
 
 ### July 2024 KPI Updates
 This document will provide our staff with a monthly review of our KPI progress.
 
 ## KPI 1 - Total Capital Investment
+#### YTD: $327M | Goal: $1.489B
 Total capital investment is the investment made by Invest Atlanta plus all leveraged capital involved in every closed project. Invest Atlanta has three subsections of this goal: total capital invested via Economic Development projects, total capital invested via Community Development projects, and total capital invested via C-PACE projects.
 
 
 ## KPI 2 - Average Net Promoter Score Across All Programs
+#### YTD: 92% | Goal: 70%
 Net promoter score captures the proportion of clients who would recommend Invest Atlanta to a friend or colleague ("promoters") relative to the proportions of people who would not recommend us ("detractors") based on survey data collected from our program participants.
 
 
 ## KPI 3 - Average Customer Satisfaction Score Across All Programs
+#### YTD: 4.85 | Goal: 4.3
 Customer satisfaction scores are reported on a scale of 1-5, with 1 representing people who were extremely dissatisfied and 5 representing people who were extremely satisfied with their experience working with Invest Atlanta.
 
 
 ## KPI 4 - Gallup Q12 Employee Engagement Percentage
+#### YTD: Coming Soon! | Goal: Baseline Year (used for 2025 goal-setting)
 Our 2024 employee engagement survey provided insight into the employee engagement percentage, which Gallup calculates as the percentage of employees who are actively engaged at work as opposed to being neutral or disengaged.
 
 
 ## KPI 5 - Number of People Engaged via Invest Atlanta Community Outreach Efforts
+#### YTD: 4,775 | Goal: 9,000
 This represents the number of people engaged through efforts such as webinars, mixers, and other Invest Atlanta-hosted events. This KPI does not include attendees of any events where an Invest Atlanta staff member was present but IA had no direct roll in organizing the event.
 
 
 ## KPI 6 - Number of Businesses Attracted, Retained, or Expanded through Invest Atlanta Activities
+#### YTD: 21 | Goal: 30
 This KPI focuses on Invest Atlanta's business development projects, which often leverage tools such as the Middle Wage Job Fund, Economic Opportunity Fund, and Opportunity Zone Tax Credits in order to encourage businesses to move to Atlanta, expand their presence within the City, or find new incentives to remain here.
 
 
 ## KPI 7 - Investment in Small Businesses by Invest Atlanta via Grants and Loans
+#### YTD: $4.1M | Goal: $6M
 This particularly reflects Invest Atlanta's direct investment to small businesses (no leveraged capital). There are two subsections which feed into the KPI: investment in small businesses via Economic Development projects and investment in small businesses via Community Development Projects
 
 
 ## KPI 8 - Total Number of Small Businesses That Received Invest Atlanta Services Across All Programs
+#### YTD: 819 | Goal: 1500
 The total number of small businesses includes small businesses who received a grant or loan from Invest Atlanta as well as small businesses who received technical assistance, participated in a WEI cohort, or received consulting from an Invest Atlanta team member.
 
 
 ## KPI 9 - Number of Hours of Formal Technical Assistance Provided to Small Businesses
+#### YTD: 1,265 | Goal: 2,750
 Formal technical assistance includes technical assistance via the following Invest Atlanta-run programs: ATLinBusiness, Open For Business Technical Assistance, and Independent Grocers Alliance technical assistance services.
 
 
 ## KPI 10 - Percentage of Small Businesses Who Received Support From Invest Atlanta Located in Disinvested Neighborhoods
+#### YTD: 32.7% | Goal: 50%
 This is the percentage of small businesses funded by Invest Atlanta via grants or loans who are located in disinvested neighborhoods as defined by ARC.
 
 
 ## KPI 12 - Number of "Good Jobs" Created via Invest Atlanta Activities
+#### YTD: 1,435 | Goal: 1,500
 "Good Jobs" are full-time employment with full benefits and $40,000 - $80,000 annual pay.
 
 
 ## KPI 13 - Total Number of Jobs Created or Retained via Invest Atlanta Activities
+#### YTD: 2,484 | Goal: 5,000
 This KPI includes all new jobs and retained jobs reported across all Invest Atlanta projects, but it does not include indirect jobs such as construction workers or projected jobs which were not verified by the responsible company.
 
 
 ## KPI 14 - Number of Low-Income Households Supported Through Homeownership Incentives
+#### YTD: 111 | Goal: 175
 These homeownership incentives include Atlanta Heritage Owner-Occupied Rehab, Down Payment Assistance, and Anti-Displacement Tax Relief.
 
 
 ## KPI 15 - Number of Affordable Single-Family and Multi-Family Development Housing Units that Received Financing from Invest Atlanta
+#### YTD: 450 | Goal: 2,600
 This is the total number of affordable housing units created or preserved through Invest Atlanta-funded development projects.
 
 
 ## KPI 16 - Percentage of Total Capital Investment in Disinvested Neighborhoods
+#### YTD: 62% | Goal: 50%
 This is the percentage of Invest Atlanta's total capital investment which went to projects located in disinvested neighborhoods.
 
 
 ## KPI 17 - Number of Residents Served Through Social Impact-Oriented Projects
+#### YTD: 9,822 | Goal: 5,000
 Atlanta Emerging Markets, Inc. specifically tracks the impact on Atlanta's residents created across their projects. This KPI does not include residents who indirectly benefit from other Invest Atlanta programs.
 
 
 ## KPI 18 - Private Investment Leveraged via TAD-Funded Projects
+#### YTD: $36M | Goal: $130M
 Though slightly counterintuitive, this KPI is specific to the private capital leveraged via TAD-funded projects. It does not include the TAD grants awarded by Invest Atlanta, nor does it include the capital leveraged in TADs by other Invest Atlanta projects that did not directly receive TAD funding.
 
 
