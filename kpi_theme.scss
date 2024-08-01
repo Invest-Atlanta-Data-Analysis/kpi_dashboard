@@ -29,7 +29,15 @@ $green:   #73a839 !default;
 $teal:    #20c997 !default;
 $cyan:    #2fa4e7 !default;
 
-$primary:       $cyan !default;
+$ia-primary1: #009ddc !default;
+$ia-primary2: #0070af !default;
+$ia-primary3: #002d56 !default; 
+$ia-secondary1: #c8df8e !default;
+$ia-secondary2: #5e9732 !default;
+$ia-mono1: #7c878e !default;
+$ia-mono2: #dbe2e9 !default;
+
+$primary:       $ia-primary2 !default;
 $secondary:     $gray-200 !default;
 $success:       $green !default;
 $info:          $blue !default;
@@ -42,7 +50,7 @@ $min-contrast-ratio:   2.75 !default;
 
 // Body
 
-$body-color: $gray-100 !default;
+$body-color: $ia-mono1 !default;
 
 // Fonts 
 
