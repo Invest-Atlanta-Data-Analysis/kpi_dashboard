@@ -3,7 +3,7 @@ title: "Invest Atlanta Monthly KPI Update"
 format:
   html: 
     toc: false
-    theme: superhero
+    theme: kpi_theme.css
 ---
 
 ### July 2024 KPI Updates
