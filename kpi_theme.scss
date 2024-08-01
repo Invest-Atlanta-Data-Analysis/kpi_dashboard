@@ -40,7 +40,7 @@ $ia-mono2: #dbe2e9 !default;
 $primary:       $ia-primary2 !default;
 $secondary:     $gray-200 !default;
 $success:       $green !default;
-$info:          $blue !default;
+$info:          $ia-primary2 !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
@@ -56,7 +56,7 @@ $body-color: $ia-mono1 !default;
 // Fonts 
 
 $font-family-sans-serif:  Montserrat, -windows-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$headings-color: $cyan !default;
+$headings-color: $ia-primary2 !default;
 
 
 
