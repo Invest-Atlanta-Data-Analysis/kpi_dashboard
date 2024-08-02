@@ -50,22 +50,15 @@ $min-contrast-ratio:   2.75 !default;
 
 // Body
 
-$body-bg: $ia-mono2 !default;
+$body-bg: $white !default;
 $body-color: $ia-mono1 !default;
 
 // Fonts 
 
-$font-family-sans-serif:  Montserrat, -windows-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif:  Montserrat, -windows-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $headings-color: $ia-primary2 !default;
 
-// Format
-$border-radius: 0.25rem !default;
-$box-shadow: 0 0.4rem 1rem rgba($black, 0.15) !default;
 
-code {
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-}
 
 
 

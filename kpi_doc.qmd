@@ -1,13 +1,13 @@
 ---
 title: "Invest Atlanta Monthly KPI Update"
+subtitle: "Data through the end of July 2024"
 format:
   html: 
     toc: false
-    theme: kpi_theme.css
+    theme: kpi_theme.scss
 ---
 
-### July 2024 KPI Updates
-This document will provide our staff with a monthly review of our KPI progress.
+### let's get into it
 
 ## KPI 1 - Total Capital Investment
 #### YTD: $327M | Goal: $1.489B
