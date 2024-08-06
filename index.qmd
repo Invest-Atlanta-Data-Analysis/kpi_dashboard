@@ -262,7 +262,7 @@ nbres_plot
 
 ``` {r}
 #| content: valuebox
-#| title: "Total Capital Invested in Housing Developments"
+#| title: "Total Capital Invested (Housing)"
 list(
   icon = "piggy-bank", 
   color = "success", 
@@ -354,11 +354,11 @@ housing_aff
 
 ``` {r}
 #| content: valuebox
-#| title: "Closed Business Development Projects"
+#| title: "Total Capital Investment (Jobs & Employment)"
 list(
   icon = "door-open", 
   color = "primary", 
-  value = 21
+  value = "30M"
   )
 ```
 
@@ -379,16 +379,6 @@ list(
   icon = "piggy-bank",
   color = "primary",
   value = "1,435"
-)
-```
-
-```{r}
-#| content: valuebox
-#| title: "Business Consultations"
-list(
-  icon = "file-person",
-  color = "success",
-  value = 774
 )
 ```
 
@@ -481,11 +471,11 @@ list(
 
 ``` {r}
 #| content: valuebox
-#| title: "People Engaged via Community Events"
+#| title: "Average Client Satisfaction Score (scale 1-5)"
 list(
   icon = "file-person", 
   color = "success", 
-  value = "4,775"
+  value = "4.83"
   )
 ```
 
@@ -497,7 +487,7 @@ list(
 
 tot_inv <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(327247651.7, 1487100000))
 
-ce_events <- data.frame(name = c("2024 YTD", "2024 Goal"), people = c(4775, 9000))
+ce_events <- data.frame(name = c("2024 YTD", "2024 Goal"), people = c(4.85, 4.3))
 
 totinv_plot <- ggplot(tot_inv) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
@@ -513,15 +503,15 @@ totinv_plot
 
 
 ``` {r}
-#| title: "Community Engagement"
+#| title: "Average Client Satisfaction Rating"
 events_plot <- ggplot(ce_events) +
   geom_col(aes(x = name, y = people, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = "Community Engagement", limits = c("2024 YTD", "2024 Goal")) +
-  scale_y_continuous(name = "Number of Event Attendees", limits = c(0,10000), 
+  scale_x_discrete(name = "Client Satisfaction", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Satisfaction Rating (1-5)", limits = c(0,5), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
   plot_theme()
-events_plot
+#events_plot
 ```
 
 ![Click to expand](wins_map_20240711.png){width=85%}
