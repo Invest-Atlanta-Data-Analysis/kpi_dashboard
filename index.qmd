@@ -170,7 +170,7 @@ sbta_plot
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$39 Million"
+  value = "$44 Million"
   )
 ```
 
@@ -187,23 +187,23 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: "C-PACE Clean Energy Total Investment"
+#| title: "NMTC Financing"
 list(
-  icon = "globe-americas",
-  color = "success",
-  value = "$13.1 Million"
-)
+  icon = "door-open", 
+  color = "success", 
+  value = "$36 Million"
+  )
 ```
 
 
 ``` {r}
 #| content: valuebox
-#| title: "NMTC Financing"
+#| title: "C-PACE Clean Energy Total Investment"
 list(
-  icon = "door-open", 
-  color = "primary", 
-  value = "$26 Million"
-  )
+  icon = "globe-americas",
+  color = "primary",
+  value = "$13.1 Million"
+)
 ```
 
 
