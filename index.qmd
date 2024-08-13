@@ -7,54 +7,9 @@ format:
     theme: cerulean 
 ---
 
-# Small Business Investment
+# Citywide Impact
 
 ## Row {height="30%"}
-
-``` {r}
-#| content: valuebox
-#| title: "Direct Investment"
-list(
-  icon = "piggy-bank", 
-  color = "success", 
-  value = "$5.7 Million"
-  )
-```
-
-```{r}
-#| content: valuebox
-#| title: "Small Businesses Funded (Grants and Loans)"
-list(
-  icon = "award-fill",
-  color = "primary",
-  value = 68
-)
-```
-
-
-``` {r}
-#| content: valuebox
-#| title: "Small Businesses Receiving Business Consulting Services"
-list(
-  icon = "door-open", 
-  color = "success", 
-  value = "883"
-  )
-```
-
-
-``` {r}
-#| content: valuebox
-#| title: "Small Business Funded in Disinvested Neighborhoods"
-list(
-  icon = "globe-americas", 
-  color = "primary", 
-  value = "32.4%"
-  )
-```
-
-
-## Row {height="70%"}
 
 ```{r, include = FALSE}
 # quarto publsh gh-pages
@@ -106,6 +61,133 @@ plot_theme <- function() {
 
 
 ```
+
+``` {r}
+#| content: valuebox
+#| title: "Total Capital Investment Across All Programs"
+list(
+  icon = "piggy-bank", 
+  color = "primary", 
+  value = "$458 Million"
+  )
+```
+
+```{r}
+#| content: valuebox
+#| title: "Total Economic Impact"
+list(
+  icon = "award-fill",
+  color = "success",
+  value = "$1.17 Billion"
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Total Capital Invested in Disinvested Neighborhoods"
+list(
+  icon = "globe-americas",
+  color = "primary",
+  value = "57%"
+)
+```
+
+``` {r}
+#| content: valuebox
+#| title: "Average Client Satisfaction Score (scale 1-5)"
+list(
+  icon = "file-person", 
+  color = "success", 
+  value = "4.65"
+  )
+```
+
+
+## Row {height="70%"}
+
+``` {r}
+#| title: "Total Capital Investment"
+
+tot_inv <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(457659904.7, 1487100000))
+
+ce_events <- data.frame(name = c("2024 YTD", "2024 Goal"), people = c(4.65, 4.3))
+
+totinv_plot <- ggplot(tot_inv) +
+  geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
+  scale_x_discrete(name = " ", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "$ Invested", limits = c(0,1500000000), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  plot_theme()
+totinv_plot
+```
+
+
+
+``` {r}
+#| title: "Average Client Satisfaction Rating"
+events_plot <- ggplot(ce_events) +
+  geom_col(aes(x = name, y = people, fill = name), color = "#000000", show.legend = FALSE) +
+  scale_x_discrete(name = "Client Satisfaction", limits = c("2024 YTD", "2024 Goal")) +
+  scale_y_continuous(name = "Satisfaction Rating (1-5)", limits = c(0,5), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  plot_theme()
+#events_plot
+```
+
+[![<b>Click the image to explore our interactive online investment map.</b>](wins_map_20240813.png "Click to view"){width=55%}](https://iatl.maps.arcgis.com/apps/instant/basic/index.html?appid=112649da7b1d4fa58098c16cc402dcc4){target="_blank"}
+
+
+
+# Small Business Investment
+
+## Row {height="30%"}
+
+``` {r}
+#| content: valuebox
+#| title: "Direct Investment"
+list(
+  icon = "piggy-bank", 
+  color = "success", 
+  value = "$5.7 Million"
+  )
+```
+
+```{r}
+#| content: valuebox
+#| title: "Small Businesses Funded (Grants and Loans)"
+list(
+  icon = "award-fill",
+  color = "primary",
+  value = 68
+)
+```
+
+
+``` {r}
+#| content: valuebox
+#| title: "Small Businesses Receiving Business Consulting Services"
+list(
+  icon = "door-open", 
+  color = "success", 
+  value = "883"
+  )
+```
+
+
+``` {r}
+#| content: valuebox
+#| title: "Small Business Funded in Disinvested Neighborhoods"
+list(
+  icon = "globe-americas", 
+  color = "primary", 
+  value = "32.4%"
+  )
+```
+
+
+## Row {height="70%"}
 
 ``` {r}
 #| title: "Small Business Investment"
@@ -458,84 +540,6 @@ sectors_plot
 ```
 
 
-# Citywide Impact
 
-## Row {height="30%"}
-
-``` {r}
-#| content: valuebox
-#| title: "Total Capital Investment Across All Programs"
-list(
-  icon = "piggy-bank", 
-  color = "primary", 
-  value = "$458 Million"
-  )
-```
-
-```{r}
-#| content: valuebox
-#| title: "Total Economic Impact"
-list(
-  icon = "award-fill",
-  color = "success",
-  value = "$1.17 Billion"
-)
-```
-
-```{r}
-#| content: valuebox
-#| title: "Total Capital Invested in Disinvested Neighborhoods"
-list(
-  icon = "globe-americas",
-  color = "primary",
-  value = "57%"
-)
-```
-
-``` {r}
-#| content: valuebox
-#| title: "Average Client Satisfaction Score (scale 1-5)"
-list(
-  icon = "file-person", 
-  color = "success", 
-  value = "4.65"
-  )
-```
-
-
-## Row {height="70%"}
-
-``` {r}
-#| title: "Total Capital Investment"
-
-tot_inv <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(457659904.7, 1487100000))
-
-ce_events <- data.frame(name = c("2024 YTD", "2024 Goal"), people = c(4.65, 4.3))
-
-totinv_plot <- ggplot(tot_inv) +
-  geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = " ", limits = c("2024 YTD", "2024 Goal")) +
-  scale_y_continuous(name = "$ Invested", limits = c(0,1500000000), 
-                     expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#009ddc", "#002d56")) +
-  plot_theme()
-totinv_plot
-```
-
-
-
-``` {r}
-#| title: "Average Client Satisfaction Rating"
-events_plot <- ggplot(ce_events) +
-  geom_col(aes(x = name, y = people, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = "Client Satisfaction", limits = c("2024 YTD", "2024 Goal")) +
-  scale_y_continuous(name = "Satisfaction Rating (1-5)", limits = c(0,5), 
-                     expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
-  plot_theme()
-#events_plot
-```
-
-[![<b>Click the image to explore our interactive online investment map.</b>](wins_map_20240813.png "Click to view"){width=55%}](https://iatl.maps.arcgis.com/apps/instant/basic/index.html?appid=112649da7b1d4fa58098c16cc402dcc4){target="_blank"}
 
 
