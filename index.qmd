@@ -117,7 +117,7 @@ totinv_plot <- ggplot(tot_inv) +
   scale_x_discrete(name = " ", limits = c("2024 YTD", "2024 Goal")) +
   scale_y_continuous(name = "$ Invested", limits = c(0,1500000000), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  scale_fill_manual(values = c("#c8df8e", "#5e9732")) +
   plot_theme()
 totinv_plot
 ```
