@@ -211,7 +211,7 @@ sbinv_plot
 
 
 ``` {r}
-#| title: "Small Business Supported via Grants, Loans, and Consulting"
+#| title: "Small Businesses Supported via Grants, Loans, and Consulting"
 sbsupport_plot <- ggplot(sb_support) +
   geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
   #ggtitle("Small Businesses Supported") +
