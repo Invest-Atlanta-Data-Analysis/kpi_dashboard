@@ -12,7 +12,7 @@ format:
 ## Row {height="30%"}
 
 ```{r, include = FALSE}
-# quarto publsh gh-pages 
+# quarto publish gh-pages 
 library(tidyverse)
 library(dplyr)
 library(usethis)
