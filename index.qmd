@@ -4,7 +4,7 @@ title: "Invest Atlanta Impact Dashboard"
 subtitle: "2024 Data Year to Date"
 format: 
   dashboard:
-    theme: cerulean 
+    theme: cerulean
 ---
 
 # Citywide Impact
@@ -135,7 +135,7 @@ events_plot <- ggplot(ce_events) +
   plot_theme()
 #events_plot
 ```
-[![<b>Click the image to explore our interactive online investment map.</wins_map_20240808_v2.png/> "Click to view"){width=95%}](https://iatl.maps.arcgis.com/apps/instant/basic/index.html?appid=112649da7b1d4fa58098c16cc402dcc4){target="_blank"}
+[![Click the image to explore our interactive online investment map.](wins_map_20240808_v2.png)](https://iatl.maps.arcgis.com/apps/instant/basic/index.html?appid=112649da7b1d4fa58098c16cc402dcc4){target="_blank"}
 
 
 
