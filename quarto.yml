@@ -1,0 +1,5 @@
+project:
+  type: dashboard
+
+dashboard:
+  title: "Your Dashboard Title"
