@@ -2,4 +2,5 @@ project:
   type: dashboard
 
 dashboard:
-  title: "Your Dashboard Title"
+  title: "Invest Atlanta Impact Dashboard"
+  output-dir: "_site"
