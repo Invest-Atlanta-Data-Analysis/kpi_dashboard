@@ -524,7 +524,7 @@ goodjobs_plot
 ```{r}
 #| title: "Closed Business Development Projects by Priority Industry"
 sectors <- data.frame(name = c("Technology", "Clean Energy", "Retail and Food", "Manufacturing"), 
-                      total = c(6, 3, 4, 4))
+                      total = c(6, 3, 3, 4))
 sectors_plot <- ggplot(sectors) +
   geom_col(aes(x = name, y = total, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = " ", limits = c("Technology", "Clean Energy", "Retail and Food", "Manufacturing")) +
