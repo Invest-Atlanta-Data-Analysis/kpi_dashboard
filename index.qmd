@@ -435,7 +435,7 @@ housing_aff
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$144.5 M"
+  value = "$144.5 Million"
   )
 ```
 
