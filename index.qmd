@@ -394,6 +394,7 @@ hsahu_plot <- ggplot(hs_ahu) +
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#009ddc", "#002d56")) +
   plot_theme()
+
 hsahu_plot
 ```
 
