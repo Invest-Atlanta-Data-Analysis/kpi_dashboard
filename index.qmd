@@ -135,7 +135,7 @@ events_plot <- ggplot(ce_events) +
   plot_theme()
 #events_plot
 ```
-[![Click the image to explore our interactive online investment map](wins_map_20241209.png){width=55%}](https://iatl.maps.arcgis.com/apps/instant/basic/index.html?appid=112649da7b1d4fa58098c16cc402dcc4){target="_blank"}
+[![Click the image to explore our interactive online investment map](wins_map_final_2024.png){width=55%}](https://iatl.maps.arcgis.com/apps/instant/basic/index.html?appid=112649da7b1d4fa58098c16cc402dcc4){target="_blank"}
 
 
 
@@ -525,7 +525,7 @@ goodjobs_plot
 ```{r}
 #| title: "Closed Business Development Projects by Priority Industry"
 sectors <- data.frame(name = c("Technology", "Clean Energy", "Retail and Food", "Manufacturing"), 
-                      total = c(6, 3, 3, 4))
+                      total = c(8, 3, 10, 4))
 sectors_plot <- ggplot(sectors) +
   geom_col(aes(x = name, y = total, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = " ", limits = c("Technology", "Clean Energy", "Retail and Food", "Manufacturing")) +
