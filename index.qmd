@@ -77,7 +77,7 @@ list(
 #| title: "Total Economic Impact"
 list(
   icon = "award-fill",
-  color = "success",
+  color = "success", 
   value = "$1.85 Billion"
 )
 ```
