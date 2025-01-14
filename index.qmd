@@ -68,7 +68,7 @@ plot_theme <- function() {
 list(
   icon = "piggy-bank", 
   color = "primary", 
-  value = "$1.53 Billion"
+  value = "$1.57 Billion"
   )
 ```
 
@@ -88,7 +88,7 @@ list(
 list(
   icon = "globe-americas",
   color = "primary",
-  value = "61%"
+  value = "62%"
 )
 ```
 
@@ -108,13 +108,13 @@ list(
 ``` {r}
 #| title: "Total Capital Investment"
 
-tot_inv <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(1533646993.48, 1487100000))
+tot_inv <- data.frame(name = c("2024 Final", "2024 Goal"), inv = c(1573895546.48, 1487100000))
 
-ce_events <- data.frame(name = c("2024 YTD", "2024 Goal"), people = c(4.76, 4.3))
+ce_events <- data.frame(name = c("2024 Final", "2024 Goal"), people = c(4.76, 4.3))
 
 totinv_plot <- ggplot(tot_inv) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = " ", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = " ", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "$ Invested", limits = c(0,1600000000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#c8df8e", "#5e9732")) +
@@ -128,7 +128,7 @@ totinv_plot
 #| title: "Average Client Satisfaction Rating"
 events_plot <- ggplot(ce_events) +
   geom_col(aes(x = name, y = people, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = "Client Satisfaction", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = "Client Satisfaction", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Satisfaction Rating (1-5)", limits = c(0,5), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
@@ -190,15 +190,15 @@ list(
 
 ``` {r}
 #| title: "Small Business Investment"
-sb_inv <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(14799350, 6000000))
+sb_inv <- data.frame(name = c("2024 Final", "2024 Goal"), inv = c(14799350, 6000000))
 
-sb_support <- data.frame(name = c("2024 YTD", "2024 Goal"), support = c(1845, 1500))
+sb_support <- data.frame(name = c("2024 Final", "2024 Goal"), support = c(1845, 1500))
 
-sb_ta <- data.frame(name = c("2024 YTD", "2024 Goal"), hours = c(3798.45, 2750))
+sb_ta <- data.frame(name = c("2024 Final", "2024 Goal"), hours = c(3798.45, 2750))
 
 sbinv_plot <- ggplot(sb_inv) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = "Small Business Investment", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = "Small Business Investment", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Direct Investment ($)", limits = c(0,15000000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#009ddc", "#002d56")) +
@@ -213,7 +213,7 @@ sbinv_plot
 sbsupport_plot <- ggplot(sb_support) +
   geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = "Total Support", 
-                   limits = c("2024 YTD", "2024 Goal")) +
+                   limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Number of Small Businesses", limits = c(0,1900), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
@@ -225,7 +225,7 @@ sbsupport_plot
 #| title: "Hours of Business Consulting Services"
 sbta_plot <- ggplot(sb_ta) +
   geom_col(aes(x = name, y = hours, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = "Business Consulting", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = "Business Consulting", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Services Provided (Hrs)", limits = c(0,3800), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#002d56", "#009ddc")) +
@@ -248,7 +248,7 @@ sbta_plot
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$59.6 Million"
+  value = "$60.2 Million"
   )
 ```
 
@@ -289,16 +289,16 @@ list(
 
 ``` {r}
 #| title: "Investment in Disinvested Neighborhoods"
-nb_dn <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(61, 50))
+nb_dn <- data.frame(name = c("2024 Final", "2024 Goal"), inv = c(62, 50))
 
 nb_tad <- data.frame(name = c("Invest Atlanta", "Total Capital Investment"), 
-                     support = c(59601437, 169644530))
+                     support = c(60241437, 175965065))
 
-nb_res <- data.frame(name = c("2024 YTD", "2024 Goal"), hours = c(9751, 9000))
+nb_res <- data.frame(name = c("2024 Final", "2024 Goal"), hours = c(9751, 9000))
 
 nbdn_plot <- ggplot(nb_dn) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = "Investment in Disinvested Neighborhoods", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = "Investment in Disinvested Neighborhoods", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Percentage of Investment", limits = c(0,100), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#009ddc", "#002d56")) +
@@ -312,7 +312,7 @@ nbdn_plot <- ggplot(nb_dn) +
 nbtad_plot <- ggplot(nb_tad) +
   geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = "Neighborhood Investment", limits = c("Invest Atlanta", "Total Capital Investment")) +
-  scale_y_continuous(name = "Investment ($)", limits = c(0,170000000), 
+  scale_y_continuous(name = "Investment ($)", limits = c(0,180000000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
   plot_theme()
@@ -323,7 +323,7 @@ nbtad_plot
 #| title: "Community Engagement: Invest Atlanta Events"
 nbres_plot <- ggplot(nb_res) +
   geom_col(aes(x = name, y = hours, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = " ", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = " ", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Attendees", limits = c(0,11000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#002d56", "#009ddc")) +
@@ -343,7 +343,7 @@ nbres_plot
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$1 Billion"
+  value = "$1.05 Billion"
   )
 ```
 
@@ -383,13 +383,13 @@ list(
 
 ``` {r}
 #| title: "Affordable Housing Units Financed"
-hs_ahu <- data.frame(name = c("2024 YTD", "2024 Goal"), inv = c(2475, 2600))
+hs_ahu <- data.frame(name = c("2024 Final", "2024 Goal"), inv = c(2475, 2600))
 
-hs_ho <- data.frame(name = c("2024 YTD", "2024 Goal"), support = c(409, 175))
+hs_ho <- data.frame(name = c("2024 Final", "2024 Goal"), support = c(409, 175))
 
 hsahu_plot <- ggplot(hs_ahu) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = "Affordable Housing Units Funded", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = "Affordable Housing Units Funded", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Number of Affordable Housing Units", limits = c(0,3000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#009ddc", "#002d56")) +
@@ -404,7 +404,7 @@ hsahu_plot
 #| title: "Homeownership Incentives Provided"
 hsho_plot <- ggplot(hs_ho) +
   geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = " ", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = " ", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Number of Homeowners", limits = c(0,410), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
@@ -436,7 +436,7 @@ housing_aff
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$146.5 Million"
+  value = "$147.5 Million"
   )
 ```
 
@@ -477,16 +477,16 @@ list(
 ``` {r}
 #| title: "Business Development Projects"
 
-biz_dev <- data.frame(name = c("2024 YTD", "2024 Goal"), closed = c(47, 30))
+biz_dev <- data.frame(name = c("2024 Final", "2024 Goal"), closed = c(47, 30))
 
-new_jobs <- data.frame(name = c("2024 YTD", "2024 Goal"), jobs = c(4250, 5000))
+new_jobs <- data.frame(name = c("2024 Final", "2024 Goal"), jobs = c(4250, 5000))
 
-good_jobs <- data.frame(name = c("2024 YTD", "2024 Goal"), good = c(1670, 1500))
+good_jobs <- data.frame(name = c("2024 Final", "2024 Goal"), good = c(1670, 1500))
 
 bizdev_plot <- ggplot(biz_dev) +
   geom_col(aes(x = name, y = closed, fill = name), color = "#000000", show.legend = FALSE) +
   #ggtitle("Small Business Investment") +
-  scale_x_discrete(name = "Business Development", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = "Business Development", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Number of Closed Projects", limits = c(0,48), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#009ddc", "#002d56")) +
@@ -500,7 +500,7 @@ bizdev_plot <- ggplot(biz_dev) +
 #| title: "Job Creation & Retention"
 newjobs_plot <- ggplot(new_jobs) +
   geom_col(aes(x = name, y = jobs, fill = name), color = "#000000", show.legend = FALSE) +
-  scale_x_discrete(name = "Employment Impact", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = "Employment Impact", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Number of Jobs", limits = c(0,5000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
@@ -514,7 +514,7 @@ newjobs_plot
 goodjobs_plot <- ggplot(good_jobs) +
   geom_col(aes(x = name, y = good, fill = name), color = "#000000", show.legend = FALSE) +
   #ggtitle("Small Businesses Supported") +
-  scale_x_discrete(name = "New Good Jobs ($40,000+/yr and full benefits)", limits = c("2024 YTD", "2024 Goal")) +
+  scale_x_discrete(name = "New Good Jobs ($40,000+/yr and full benefits)", limits = c("2024 Final", "2024 Goal")) +
   scale_y_continuous(name = "Number of Good Jobs", limits = c(0,1700), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#002d56", "#009ddc")) +
@@ -529,7 +529,7 @@ sectors <- data.frame(name = c("Technology", "Clean Energy", "Retail and Food", 
 sectors_plot <- ggplot(sectors) +
   geom_col(aes(x = name, y = total, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = " ", limits = c("Technology", "Clean Energy", "Retail and Food", "Manufacturing")) +
-  scale_y_continuous(name = "Number of Closed Projects", limits = c(0,7), expand = c(0,0)) +
+  scale_y_continuous(name = "Number of Closed Projects", limits = c(0,11), expand = c(0,0)) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e", "#002d56", "#009ddc")) +
   plot_theme()
 sectors_plot
