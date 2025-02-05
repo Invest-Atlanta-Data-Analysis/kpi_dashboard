@@ -78,7 +78,7 @@ list(
 list(
   icon = "award-fill",
   color = "success", 
-  value = "$1.85 Billion"
+  value = "$1.9 Billion"
 )
 ```
 
@@ -436,7 +436,7 @@ housing_aff
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$147.5 Million"
+  value = "$149.2 Million"
   )
 ```
 
@@ -446,7 +446,7 @@ list(
 list(
   icon = "globe-americas", 
   color = "success", 
-  value = "4,250"
+  value = "4,433"
   )
 ```
 
@@ -456,7 +456,7 @@ list(
 list(
   icon = "piggy-bank",
   color = "primary",
-  value = "1,670"
+  value = "1,675"
 )
 ```
 
@@ -466,7 +466,7 @@ list(
 list(
   icon = "bag-dash-fill",
   color = "success",
-  value = 47
+  value = 50
 )
 
 ```
@@ -477,17 +477,17 @@ list(
 ``` {r}
 #| title: "Business Development Projects"
 
-biz_dev <- data.frame(name = c("2024 Final", "2024 Goal"), closed = c(47, 30))
+biz_dev <- data.frame(name = c("2024 Final", "2024 Goal"), closed = c(50, 30))
 
-new_jobs <- data.frame(name = c("2024 Final", "2024 Goal"), jobs = c(4250, 5000))
+new_jobs <- data.frame(name = c("2024 Final", "2024 Goal"), jobs = c(4433, 5000))
 
-good_jobs <- data.frame(name = c("2024 Final", "2024 Goal"), good = c(1670, 1500))
+good_jobs <- data.frame(name = c("2024 Final", "2024 Goal"), good = c(1675, 1500))
 
 bizdev_plot <- ggplot(biz_dev) +
   geom_col(aes(x = name, y = closed, fill = name), color = "#000000", show.legend = FALSE) +
   #ggtitle("Small Business Investment") +
   scale_x_discrete(name = "Business Development", limits = c("2024 Final", "2024 Goal")) +
-  scale_y_continuous(name = "Number of Closed Projects", limits = c(0,48), 
+  scale_y_continuous(name = "Number of Closed Projects", limits = c(0,51), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#009ddc", "#002d56")) +
   plot_theme()
