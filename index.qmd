@@ -64,7 +64,7 @@ plot_theme <- function() {
 
 ``` {r}
 #| content: valuebox
-#| title: "Total Capital Investment Across All Programs"
+#| title: "Total Capital Invested Across All Programs"
 list(
   icon = "piggy-bank", 
   color = "primary", 
@@ -532,7 +532,7 @@ goodjobs_plot
 ```{r}
 #| title: "Closed Business Development Projects by Priority Industry"
 
-sectors <- data.frame(Industry = c("Technology", "Retail and Food", "Professional Services"), 
+sectors <- data.frame(Industry = c("Technology", "Retail and Food", "Other Professional Services"), 
                       total = c(.25, .375, .375))
 sectors <- sectors %>% mutate(prop = total / sum(sectors$total), 
                           label = scales::percent(prop, accuracy = 0.1)) %>%
