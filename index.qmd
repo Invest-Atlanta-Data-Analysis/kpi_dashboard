@@ -1,7 +1,7 @@
 
 ---
 title: "Invest Atlanta Impact Dashboard"
-subtitle: "Quarter 1 2025"
+subtitle: "2025 Year to Date"
 format: 
   dashboard:
     theme: cerulean
