@@ -300,7 +300,7 @@ nb_dn <- nb_dn %>% mutate(prop = pct / sum(nb_dn$pct),
 nb_tad <- data.frame(name = c("Invest Atlanta", "Total Capital Investment"), 
                      support = c(10650000, 106784792.07))
 
-nb_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(6304, 9000))
+nb_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(10035, 9000))
 
 aemi_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(7655, 10000))
 
@@ -334,7 +334,7 @@ nbtad_plot
 nbres_plot <- ggplot(nb_res) +
   geom_col(aes(x = name, y = ppl, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = " ", limits = c("2025 YTD", "2025 Goal")) +
-  scale_y_continuous(name = "Attendees", limits = c(0,9100), 
+  scale_y_continuous(name = "Attendees", limits = c(0,11000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#002d56", "#009ddc")) +
   plot_theme()
