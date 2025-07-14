@@ -68,7 +68,7 @@ plot_theme <- function() {
 list(
   icon = "piggy-bank", 
   color = "primary", 
-  value = "$665.9 million"
+  value = "$762.9 million"
   )
 ```
 
@@ -88,7 +88,7 @@ list(
 list(
   icon = "globe-americas",
   color = "primary",
-  value = "6.5%"
+  value = "5.7%"
 )
 ```
 
@@ -108,7 +108,7 @@ list(
 ``` {r}
 #| title: "Total Capital Investment"
 
-tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(665936158.82, 930000000))
+tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(762936158.82, 930000000))
 
 ce_events <- data.frame(name = c("2025 YTD", "2025 Goal"), people = c(4.61, 4.3))
 
@@ -298,7 +298,7 @@ nb_dn <- nb_dn %>% mutate(prop = pct / sum(nb_dn$pct),
                            Location = factor(Location, levels = Location[order(-(prop))], ordered = TRUE))
 
 nb_tad <- data.frame(name = c("Invest Atlanta", "Total Capital Investment"), 
-                     support = c(10650000, 106784792.07))
+                     support = c(28653000.00, 264905679.07))
 
 nb_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(10035, 9000))
 
@@ -321,7 +321,7 @@ nbdn_plot <- ggplot(nb_dn) +
 nbtad_plot <- ggplot(nb_tad) +
   geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = "Neighborhood Investment", limits = c("Invest Atlanta", "Total Capital Investment")) +
-  scale_y_continuous(name = "Investment ($)", limits = c(0,110000000), 
+  scale_y_continuous(name = "Investment ($)", limits = c(0,300000000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
   plot_theme()
@@ -458,7 +458,7 @@ housing_aff
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$225.7 Million"
+  value = "$322.8 Million"
   )
 ```
 
@@ -523,12 +523,13 @@ bizdev_plot <- ggplot(biz_dev) +
 newjobs_plot <- ggplot(new_jobs) +
   geom_col(aes(x = name, y = jobs, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = "Employment Impact", limits = c("2025 YTD", "2025 Goal")) +
-  scale_y_continuous(name = "Number of Jobs", limits = c(0,5000), 
+  scale_y_continuous(name = "Number of Jobs", limits = c(0,3600), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
   plot_theme()
 newjobs_plot
 ```
+
 
 
 ``` {r}
@@ -543,6 +544,8 @@ goodjobs_plot <- ggplot(good_jobs) +
   plot_theme()
 goodjobs_plot
 ```
+
+
 
 ```{r}
 #| title: "Closed Business Development Projects by Priority Industry"
