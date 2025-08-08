@@ -68,7 +68,7 @@ plot_theme <- function() {
 list(
   icon = "piggy-bank", 
   color = "primary", 
-  value = "$762.9 million"
+  value = "$774.4 million"
   )
 ```
 
@@ -78,7 +78,7 @@ list(
 list(
   icon = "award-fill",
   color = "success", 
-  value = "$1.5 Billion"
+  value = "$3.1 Billion"
 )
 ```
 
@@ -88,7 +88,7 @@ list(
 list(
   icon = "globe-americas",
   color = "primary",
-  value = "5.7%"
+  value = "12.8%"
 )
 ```
 
@@ -108,7 +108,7 @@ list(
 ``` {r}
 #| title: "Total Capital Investment"
 
-tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(762936158.82, 930000000))
+tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(774393807.82, 930000000))
 
 ce_events <- data.frame(name = c("2025 YTD", "2025 Goal"), people = c(4.61, 4.3))
 
@@ -149,7 +149,7 @@ events_plot <- ggplot(ce_events) +
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$7.2 Million"
+  value = "$7.4 Million"
   )
 ```
 
@@ -159,7 +159,7 @@ list(
 list(
   icon = "award-fill",
   color = "primary",
-  value = 31
+  value = 33
 )
 ```
 
@@ -170,7 +170,7 @@ list(
 list(
   icon = "door-open", 
   color = "success", 
-  value = "395"
+  value = "412"
   )
 ```
 
@@ -181,7 +181,7 @@ list(
 list(
   icon = "globe-americas", 
   color = "primary", 
-  value = "35.5%"
+  value = "36.3%"
   )
 ```
 
@@ -190,9 +190,9 @@ list(
 
 ``` {r}
 #| title: "Small Business Investment"
-sb_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(7210209, 8500000))
+sb_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(7460209, 8500000))
 
-sb_support <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(426, 1000))
+sb_support <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(445, 1000))
 
 sb_ta <- data.frame(name = c("2025 YTD", "2025 Goal"), hours = c(40, 400))
 
@@ -259,7 +259,7 @@ list(
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$6.65 Million"
+  value = "$6.9 Million"
   )
 ```
 
@@ -269,7 +269,7 @@ list(
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$200.7 Million"
+  value = "$201 Million"
   )
 ```
 
@@ -290,7 +290,7 @@ list(
 ``` {r}
 #| title: "Investment in Disinvested Neighborhoods"
 nb_dn <- data.frame(Location = c("Disinvested Neighborhoods", "Citywide"), 
-                    pct = c(13.5, 89.9))
+                    pct = c(12.8, 87.2))
 
 nb_dn <- nb_dn %>% mutate(prop = pct / sum(nb_dn$pct), 
                           label = scales::percent(prop, accuracy = 0.1)) %>%
@@ -298,9 +298,9 @@ nb_dn <- nb_dn %>% mutate(prop = pct / sum(nb_dn$pct),
                            Location = factor(Location, levels = Location[order(-(prop))], ordered = TRUE))
 
 nb_tad <- data.frame(name = c("Invest Atlanta", "Total Capital Investment"), 
-                     support = c(28653000.00, 264905679.07))
+                     support = c(28903000, 265505679.07))
 
-nb_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(10035, 9000))
+nb_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(12161, 9000))
 
 aemi_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(7655, 10000))
 
@@ -334,7 +334,7 @@ nbtad_plot
 nbres_plot <- ggplot(nb_res) +
   geom_col(aes(x = name, y = ppl, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = " ", limits = c("2025 YTD", "2025 Goal")) +
-  scale_y_continuous(name = "Attendees", limits = c(0,11000), 
+  scale_y_continuous(name = "Attendees", limits = c(0,13000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#002d56", "#009ddc")) +
   plot_theme()
@@ -397,7 +397,7 @@ list(
 list(
   icon = "house-door", 
   color = "primary", 
-  value = 139
+  value = 167
   )
 ```
 
@@ -407,7 +407,7 @@ list(
 #| title: "Affordable Housing Units Financed"
 hs_ahu <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(525, 1900))
 
-hs_ho <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(139, 400))
+hs_ho <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(167, 400))
 
 hsahu_plot <- ggplot(hs_ahu) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
@@ -458,7 +458,7 @@ housing_aff
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$322.8 Million"
+  value = "$328.2 Million"
   )
 ```
 
@@ -468,7 +468,7 @@ list(
 list(
   icon = "globe-americas", 
   color = "success", 
-  value = "2,161"
+  value = "2,900"
   )
 ```
 
@@ -478,7 +478,7 @@ list(
 list(
   icon = "piggy-bank",
   color = "primary",
-  value = "283"
+  value = "353"
 )
 ```
 
@@ -488,7 +488,7 @@ list(
 list(
   icon = "bag-dash-fill",
   color = "success",
-  value = 29
+  value = 34
 )
 
 ```
@@ -499,17 +499,17 @@ list(
 ``` {r}
 #| title: "Business Development Projects"
 
-biz_dev <- data.frame(name = c("2025 YTD", "2025 Goal"), closed = c(29, 30))
+biz_dev <- data.frame(name = c("2025 YTD", "2025 Goal"), closed = c(34, 30))
 
-new_jobs <- data.frame(name = c("2025 YTD", "2025 Goal"), jobs = c(2161, 3500))
+new_jobs <- data.frame(name = c("2025 YTD", "2025 Goal"), jobs = c(2900, 3500))
 
-good_jobs <- data.frame(name = c("2025 YTD", "2025 Goal"), good = c(283, 1300))
+good_jobs <- data.frame(name = c("2025 YTD", "2025 Goal"), good = c(353, 1300))
 
 bizdev_plot <- ggplot(biz_dev) +
   geom_col(aes(x = name, y = closed, fill = name), color = "#000000", show.legend = FALSE) +
   #ggtitle("Small Business Investment") +
   scale_x_discrete(name = "Business Development", limits = c("2025 YTD", "2025 Goal")) +
-  scale_y_continuous(name = "Number of Closed Projects", limits = c(0,31), 
+  scale_y_continuous(name = "Number of Closed Projects", limits = c(0,35), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#009ddc", "#002d56")) +
   plot_theme()
@@ -551,7 +551,7 @@ goodjobs_plot
 #| title: "Closed Business Development Projects by Priority Industry"
 
 sectors <- data.frame(Industry = c("Food Access", "Technology & Innovation", "Professional Services"), 
-                      total = c(.5, .307, .154))
+                      total = c(.40625, .375, .21875))
 sectors <- sectors %>% mutate(prop = total / sum(sectors$total), 
                           label = scales::percent(prop, accuracy = 0.1)) %>%
   arrange(prop) %>% mutate(ypos = cumsum(prop) - 0.5*prop, 
