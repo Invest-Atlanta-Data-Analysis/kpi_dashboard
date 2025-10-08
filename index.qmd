@@ -68,7 +68,7 @@ plot_theme <- function() {
 list(
   icon = "piggy-bank", 
   color = "primary", 
-  value = "$835.2 million"
+  value = "$976 million"
   )
 ```
 
@@ -78,7 +78,7 @@ list(
 list(
   icon = "award-fill",
   color = "success", 
-  value = "$3.7 Billion"
+  value = "$4.1 Billion"
 )
 ```
 
@@ -88,7 +88,7 @@ list(
 list(
   icon = "globe-americas",
   color = "primary",
-  value = "14.9%"
+  value = "17.4%"
 )
 ```
 
@@ -98,7 +98,7 @@ list(
 list(
   icon = "file-person", 
   color = "success", 
-  value = "4.61"
+  value = "4.67"
   )
 ```
 
@@ -108,9 +108,9 @@ list(
 ``` {r}
 #| title: "Total Capital Investment"
 
-tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(835234141.82, 930000000))
+tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(976015043.01, 930000000))
 
-ce_events <- data.frame(name = c("2025 YTD", "2025 Goal"), people = c(4.61, 4.3))
+ce_events <- data.frame(name = c("2025 YTD", "2025 Goal"), people = c(4.67, 4.3))
 
 totinv_plot <- ggplot(tot_inv) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
@@ -135,7 +135,7 @@ events_plot <- ggplot(ce_events) +
   plot_theme()
 #events_plot
 ```
-[![Click the image to explore our interactive online investment map](wins_map_20250910.png){width=55%}](https://iatl.maps.arcgis.com/apps/instant/basic/index.html?appid=112649da7b1d4fa58098c16cc402dcc4){target="_blank"}
+[![Click the image to explore our interactive online investment map](wins_map_20251008.png){width=55%}](https://iatl.maps.arcgis.com/apps/instant/basic/index.html?appid=112649da7b1d4fa58098c16cc402dcc4){target="_blank"}
 
 
 
@@ -149,7 +149,7 @@ events_plot <- ggplot(ce_events) +
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$7.7 Million"
+  value = "$8.2 Million"
   )
 ```
 
@@ -159,7 +159,7 @@ list(
 list(
   icon = "award-fill",
   color = "primary",
-  value = 37
+  value = 61
 )
 ```
 
@@ -170,7 +170,7 @@ list(
 list(
   icon = "door-open", 
   color = "success", 
-  value = "467"
+  value = "822"
   )
 ```
 
@@ -181,7 +181,7 @@ list(
 list(
   icon = "globe-americas", 
   color = "primary", 
-  value = "30.8%"
+  value = "27.9%"
   )
 ```
 
@@ -190,9 +190,9 @@ list(
 
 ``` {r}
 #| title: "Small Business Investment"
-sb_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(7745209, 8500000))
+sb_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(8270209, 8500000))
 
-sb_support <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(506, 1000))
+sb_support <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(882, 1000))
 
 sb_ta <- data.frame(name = c("2025 YTD", "2025 Goal"), hours = c(40, 400))
 
@@ -259,7 +259,7 @@ list(
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$7.9 Million"
+  value = "$9.4 Million"
   )
 ```
 
@@ -269,7 +269,7 @@ list(
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$202 Million"
+  value = "$227 Million"
   )
 ```
 
@@ -290,17 +290,17 @@ list(
 ``` {r}
 #| title: "Investment in Disinvested Neighborhoods"
 nb_dn <- data.frame(Location = c("Disinvested Neighborhoods", "Citywide"), 
-                    pct = c(14.9, 87.2))
+                    pct = c(17.4, 82.6))
 
 nb_dn <- nb_dn %>% mutate(prop = pct / sum(nb_dn$pct), 
                           label = scales::percent(prop, accuracy = 0.1)) %>%
   arrange(prop) %>% mutate(ypos = cumsum(prop) - 0.5*prop, 
                            Location = factor(Location, levels = Location[order(-(prop))], ordered = TRUE))
 
-nb_tad <- data.frame(name = c("Invest Atlanta", "Total Capital Investment"), 
-                     support = c(29903000, 267334679.07))
+nb_tad <- data.frame(Funding = c("Invest Atlanta Investment", "Leveraged Capital Investment"), 
+                     support = c(31403000, 262593205))
 
-nb_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(14019, 9000))
+nb_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(14815, 9000))
 
 aemi_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(7655, 10000))
 
@@ -325,9 +325,28 @@ nbtad_plot <- ggplot(nb_tad) +
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
   plot_theme()
-nbtad_plot
+#nbtad_plot
 ```
 
+``` {r}
+#| title: "Investment in Neighborhood Development"
+
+nb_tad <- nb_tad %>% mutate(prop = support / sum(nb_tad$support), 
+                          label = scales::percent(prop, accuracy = 0.1)) %>%
+  arrange(prop) %>% mutate(ypos = cumsum(prop) - 0.5*prop, 
+                           Funding = factor(Funding, levels = Funding[order(-(prop))], ordered = TRUE))
+
+nbinv_plot <- ggplot(nb_tad) +
+  geom_bar(aes(x = "", y = prop, fill = Funding), color = "#000000", 
+           stat = "identity", width = 1, show.legend = TRUE) +
+  coord_polar("y", start = 0) +
+  geom_text(aes(x = "", y = ypos, label = label), size = 5, color = "white") +
+  scale_fill_manual(values = c("#002d56", "#009ddc")) +
+  theme_void() +
+  theme(legend.position = 'bottom', legend.text = element_text(size = 14))
+
+nbinv_plot
+```
 
 ``` {r}
 #| title: "Community Engagement: Invest Atlanta Events"
@@ -336,7 +355,7 @@ nbres_plot <- ggplot(nb_res) +
   scale_x_discrete(name = " ", limits = c("2025 YTD", "2025 Goal")) +
   scale_y_continuous(name = "Attendees", limits = c(0,15000), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#002d56", "#009ddc")) +
+  scale_fill_manual(values = c("#c8df8e", "#5e9732")) +
   plot_theme()
 nbres_plot
 ```
@@ -349,7 +368,7 @@ aemi_plot <- ggplot(aemi_res) +
   scale_x_discrete(name = " ", limits = c("2025 YTD", "2025 Goal")) +
   scale_y_continuous(name = "Residents Served", limits = c(0,11000), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#c8df8e", "#5e9732")) +
+  scale_fill_manual(values = c("#002d56", "#009ddc")) +
   plot_theme()
 aemi_plot
 ```
@@ -365,7 +384,7 @@ aemi_plot
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$338.2 Million"
+  value = "$473.2 Million"
   )
 ```
 
@@ -375,7 +394,7 @@ list(
 list(
   icon = "house-add",
   color = "primary",
-  value = "770"
+  value = "1180"
 )
 ```
 
@@ -386,7 +405,7 @@ list(
 list(
   icon = "door-open", 
   color = "success", 
-  value = 534
+  value = 923
   )
 ```
 
@@ -397,7 +416,7 @@ list(
 list(
   icon = "house-door", 
   color = "primary", 
-  value = 183
+  value = 618
   )
 ```
 
@@ -405,9 +424,9 @@ list(
 
 ``` {r}
 #| title: "Affordable Housing Units Financed"
-hs_ahu <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(770, 1900))
+hs_ahu <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(1180, 1900))
 
-hs_ho <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(183, 400))
+hs_ho <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(618, 400))
 
 hsahu_plot <- ggplot(hs_ahu) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
@@ -427,7 +446,7 @@ hsahu_plot
 hsho_plot <- ggplot(hs_ho) +
   geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = " ", limits = c("2025 YTD", "2025 Goal")) +
-  scale_y_continuous(name = "Number of Homeowners", limits = c(0,410), 
+  scale_y_continuous(name = "Number of Homeowners", limits = c(0,650), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
   plot_theme()
@@ -437,7 +456,7 @@ hsho_plot
 ```{r}
 #| title: "Housing Investments: Percentage Affordable"
 units <- data.frame(years = c('2018','2019', '2020', '2021', '2022', '2023', '2024', '2025'),
-                    aff = c(57.3, 55.5, 83.7, 83.0, 94.6, 85.9, 91, 74))
+                    aff = c(57.3, 55.5, 83.7, 83.0, 94.6, 85.9, 91, 80.8))
 housing_aff <- ggplot(units) +
   geom_col(aes(x=years, y=aff), fill = "#009DDC", color = "#000000") +
   scale_y_continuous(name = "Affordable Housing Funded (%)", expand = c(0,0)) +
@@ -458,7 +477,7 @@ housing_aff
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$328.8 Million"
+  value = "$329 Million"
   )
 ```
 
@@ -468,7 +487,7 @@ list(
 list(
   icon = "globe-americas", 
   color = "success", 
-  value = "3,033"
+  value = "3,094"
   )
 ```
 
@@ -478,7 +497,7 @@ list(
 list(
   icon = "piggy-bank",
   color = "primary",
-  value = "353"
+  value = "395"
 )
 ```
 
@@ -488,7 +507,7 @@ list(
 list(
   icon = "bag-dash-fill",
   color = "success",
-  value = 37
+  value = 38
 )
 
 ```
@@ -499,17 +518,17 @@ list(
 ``` {r}
 #| title: "Business Development Projects"
 
-biz_dev <- data.frame(name = c("2025 YTD", "2025 Goal"), closed = c(37, 30))
+biz_dev <- data.frame(name = c("2025 YTD", "2025 Goal"), closed = c(38, 30))
 
-new_jobs <- data.frame(name = c("2025 YTD", "2025 Goal"), jobs = c(3033, 3500))
+new_jobs <- data.frame(name = c("2025 YTD", "2025 Goal"), jobs = c(3094, 3500))
 
-good_jobs <- data.frame(name = c("2025 YTD", "2025 Goal"), good = c(353, 1300))
+good_jobs <- data.frame(name = c("2025 YTD", "2025 Goal"), good = c(395, 1300))
 
 bizdev_plot <- ggplot(biz_dev) +
   geom_col(aes(x = name, y = closed, fill = name), color = "#000000", show.legend = FALSE) +
   #ggtitle("Small Business Investment") +
   scale_x_discrete(name = "Business Development", limits = c("2025 YTD", "2025 Goal")) +
-  scale_y_continuous(name = "Number of Closed Projects", limits = c(0,35), 
+  scale_y_continuous(name = "Number of Closed Projects", limits = c(0,40), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#009ddc", "#002d56")) +
   plot_theme()
@@ -561,10 +580,10 @@ sectors_plot <- ggplot(sectors) +
   geom_bar(aes(x = "", y = total, fill = Industry), color = "#000000", 
            stat = "identity", width = 1, show.legend = TRUE) +
   coord_polar("y", start = 0) +
-  geom_text(aes(x = "", y = ypos, label = label), size = 4, color = "white") +
+  geom_text(aes(x = "", y = ypos, label = label), size = 5, color = "white") +
   scale_fill_manual(values = c("#5e9732", "#002d56", "#009ddc")) +
   theme_void() +
-    theme(legend.position = 'bottom', legend.text = element_text(size = 16))
+    theme(legend.position = 'bottom', legend.text = element_text(size = 14))
 sectors_plot
 ```
 
