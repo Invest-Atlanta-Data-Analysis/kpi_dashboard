@@ -416,7 +416,7 @@ list(
 list(
   icon = "house-door", 
   color = "primary", 
-  value = 618
+  value = 617
   )
 ```
 
@@ -485,7 +485,7 @@ list(
 #| content: valuebox
 #| title: "Total Jobs Impact"
 list(
-  icon = "globe-americas", 
+  icon = "bag-dash-fill", 
   color = "success", 
   value = "3,094"
   )
