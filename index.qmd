@@ -88,7 +88,7 @@ list(
 list(
   icon = "globe-americas",
   color = "primary",
-  value = "23.7%"
+  value = "23.8%"
 )
 ```
 
@@ -108,7 +108,7 @@ list(
 ``` {r}
 #| title: "Total Capital Investment"
 
-tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(1726232352.43, 930000000))
+tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(1726921850.43, 930000000))
 
 ce_events <- data.frame(name = c("2025 YTD", "2025 Goal"), people = c(4.6, 4.3))
 
@@ -190,7 +190,7 @@ list(
 
 ``` {r}
 #| title: "Small Business Investment"
-sb_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(10044209, 8500000))
+sb_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(10065209, 8500000))
 
 sb_support <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(1087, 1000))
 
@@ -414,7 +414,7 @@ list(
 list(
   icon = "house-door", 
   color = "primary", 
-  value = 574
+  value = 576
   )
 ```
 
@@ -424,7 +424,7 @@ list(
 #| title: "Affordable Housing Units Financed"
 hs_ahu <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(2384, 1900))
 
-hs_ho <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(574, 400))
+hs_ho <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(576, 400))
 
 hsahu_plot <- ggplot(hs_ahu) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
