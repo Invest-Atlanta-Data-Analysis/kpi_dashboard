@@ -88,7 +88,7 @@ list(
 list(
   icon = "globe-americas",
   color = "primary",
-  value = "23.8%"
+  value = "23.7%"
 )
 ```
 
@@ -108,7 +108,7 @@ list(
 ``` {r}
 #| title: "Total Capital Investment"
 
-tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(1725012352.43, 930000000))
+tot_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(1726232352.43, 930000000))
 
 ce_events <- data.frame(name = c("2025 YTD", "2025 Goal"), people = c(4.6, 4.3))
 
@@ -149,7 +149,7 @@ events_plot <- ggplot(ce_events) +
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$9.8 Million"
+  value = "$10 Million"
   )
 ```
 
@@ -159,7 +159,7 @@ list(
 list(
   icon = "award-fill",
   color = "primary",
-  value = 94
+  value = 98
 )
 ```
 
@@ -181,7 +181,7 @@ list(
 list(
   icon = "globe-americas", 
   color = "primary", 
-  value = "37.2%"
+  value = "37.8%"
   )
 ```
 
@@ -190,16 +190,16 @@ list(
 
 ``` {r}
 #| title: "Small Business Investment"
-sb_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(9844209, 8500000))
+sb_inv <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(10044209, 8500000))
 
-sb_support <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(1083, 1000))
+sb_support <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(1087, 1000))
 
 sb_ta <- data.frame(name = c("2025 YTD", "2025 Goal"), hours = c(134.5, 400))
 
 sbinv_plot <- ggplot(sb_inv) +
   geom_col(aes(x = name, y = inv, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = "Small Business Investment", limits = c("2025 YTD", "2025 Goal")) +
-  scale_y_continuous(name = "Direct Investment ($)", limits = c(0,10000000), 
+  scale_y_continuous(name = "Direct Investment ($)", limits = c(0,11000000), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#009ddc", "#002d56")) +
   plot_theme()
@@ -226,7 +226,7 @@ sbsupport_plot
 sbta_plot <- ggplot(sb_ta) +
   geom_col(aes(x = name, y = hours, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = "Business Consulting", limits = c("2025 YTD", "2025 Goal")) +
-  scale_y_continuous(name = "Services Provided (Hrs)", limits = c(0,500), 
+  scale_y_continuous(name = "Services Provided (Hrs)", limits = c(0,450), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#002d56", "#009ddc")) +
   plot_theme()
@@ -257,7 +257,7 @@ list(
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$30.1 Million"
+  value = "$31.3 Million"
   )
 ```
 
@@ -267,7 +267,7 @@ list(
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$413 Million"
+  value = "$398 Million"
   )
 ```
 
@@ -296,7 +296,7 @@ nb_dn <- nb_dn %>% mutate(prop = pct / sum(nb_dn$pct),
                            Location = factor(Location, levels = Location[order(-(prop))], ordered = TRUE))
 
 nb_tad <- data.frame(Funding = c("Invest Atlanta Investment", "Leveraged Capital Investment"), 
-                     support = c(119200000, 580633852))
+                     support = c(94400000, 541030643.07))
 
 nb_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(24218, 9000))
 
