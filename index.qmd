@@ -84,11 +84,11 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: "Total Capital Invested in Disinvested Neighborhoods"
+#| title: "Total Investment to Disinvested Neighborhoods"
 list(
   icon = "globe-americas",
   color = "primary",
-  value = "23.8%"
+  value = "46.3%"
 )
 ```
 
@@ -414,7 +414,7 @@ list(
 list(
   icon = "house-door", 
   color = "primary", 
-  value = 576
+  value = 672
   )
 ```
 
@@ -444,7 +444,7 @@ hsahu_plot
 hsho_plot <- ggplot(hs_ho) +
   geom_col(aes(x = name, y = support, fill = name), color = "#000000", show.legend = FALSE) +
   scale_x_discrete(name = " ", limits = c("2025 YTD", "2025 Goal")) +
-  scale_y_continuous(name = "Number of Homeowners", limits = c(0,580), 
+  scale_y_continuous(name = "Number of Homeowners", limits = c(0,680), 
                      expand = c(0,0), labels = scales::comma) +
   scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
   plot_theme()
