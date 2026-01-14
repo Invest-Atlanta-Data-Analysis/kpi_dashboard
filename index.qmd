@@ -414,7 +414,7 @@ list(
 list(
   icon = "house-door", 
   color = "primary", 
-  value = 672
+  value = 576
   )
 ```
 
