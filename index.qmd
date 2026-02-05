@@ -267,7 +267,7 @@ list(
 list(
   icon = "door-open", 
   color = "primary", 
-  value = "$398 Million"
+  value = "$401 Million"
   )
 ```
 
@@ -296,7 +296,7 @@ nb_dn <- nb_dn %>% mutate(prop = pct / sum(nb_dn$pct),
                            Location = factor(Location, levels = Location[order(-(prop))], ordered = TRUE))
 
 nb_tad <- data.frame(Funding = c("Invest Atlanta Investment", "Leveraged Capital Investment"), 
-                     support = c(94400000, 541030643.07))
+                     support = c(97400000, 449713493.07))
 
 nb_res <- data.frame(name = c("2025 YTD", "2025 Goal"), ppl = c(24218, 9000))
 
@@ -392,7 +392,7 @@ list(
 list(
   icon = "house-add",
   color = "primary",
-  value = "2,384"
+  value = "2,381"
 )
 ```
 
@@ -422,7 +422,7 @@ list(
 
 ``` {r}
 #| title: "Affordable Housing Units Financed"
-hs_ahu <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(2384, 1900))
+hs_ahu <- data.frame(name = c("2025 YTD", "2025 Goal"), inv = c(2381, 1900))
 
 hs_ho <- data.frame(name = c("2025 YTD", "2025 Goal"), support = c(576, 400))
 
@@ -454,7 +454,7 @@ hsho_plot
 ```{r}
 #| title: "Housing Investments: Percentage Affordable"
 units <- data.frame(years = c('2018','2019', '2020', '2021', '2022', '2023', '2024', '2025'),
-                    aff = c(57.3, 55.5, 83.7, 83.0, 94.6, 85.9, 91, 84.2))
+                    aff = c(57.3, 55.5, 83.7, 83.0, 94.6, 85.9, 91, 84.1))
 housing_aff <- ggplot(units) +
   geom_col(aes(x=years, y=aff), fill = "#009DDC", color = "#000000") +
   scale_y_continuous(name = "Affordable Housing Funded (%)", expand = c(0,0)) +
