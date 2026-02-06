@@ -257,7 +257,7 @@ list(
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$31.3 Million"
+  value = "$34.3 Million"
   )
 ```
 
