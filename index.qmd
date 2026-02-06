@@ -382,7 +382,7 @@ aemi_plot
 list(
   icon = "piggy-bank", 
   color = "success", 
-  value = "$961 Million"
+  value = "$968 Million"
   )
 ```
 
@@ -587,6 +587,25 @@ sectors_plot
 ```
 
 
+```{r}
 
+# This is just a chart we want for the annual report
+# Looking into % completion for 20,000 affordable housing units (Mayor's goal)
+# 7,919 units from IA and 13,187 overall (including City projects, AH, etc)
+
+ah <- data.frame(name = c("Invest Atlanta", "All Developments", "2030 Goal"),
+                 units = c(7919, 13187, 20000))
+
+ah_plot <- ggplot(ah) +
+  geom_col(aes(x = name, y = units, fill = name), color = "#000000", show.legend = FALSE) +
+  scale_x_discrete(name = "Affordable Housing Units Funded", 
+                   limits = c("Invest Atlanta", "All Developments", "2030 Goal")) +
+  scale_y_continuous(name = "Number of Units", limits = c(0,30002), 
+                     expand = c(0,0), labels = scales::comma) +
+  scale_fill_manual(values = c("#5e9732", "#c8df8e", "#009ddc")) +
+  plot_theme()
+#ah_plot
+
+```
 
 
