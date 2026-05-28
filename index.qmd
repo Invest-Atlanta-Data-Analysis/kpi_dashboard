@@ -4,7 +4,8 @@ title: "Invest Atlanta Impact Dashboard"
 subtitle: "2026 Year to Date"
 format: 
   dashboard:
-    theme: cerulean
+    theme: [materia, kpi_theme.scss]
+    
 ---
 
 # Citywide Impact
@@ -62,22 +63,27 @@ plot_theme <- function() {
 
 ```
 
-``` {r}
+
+```{r}
 #| content: valuebox
 #| title: "Total Capital Invested Across All Programs"
+#| classes: "ia-dark-box"
+
 list(
-  icon = "piggy-bank", 
-  color = "primary", 
+  icon = "piggy-bank",
+  color = "#007cba",
   value = "$183.6 Million"
-  )
+)
 ```
 
 ```{r}
 #| content: valuebox
 #| title: "Total Economic Impact"
+#| classes: "ia-light-box"
+
 list(
-  icon = "award-fill",
-  color = "success", 
+  icon = "award",
+  color = "#009BD1",
   value = "$279.3 Million"
 )
 ```
@@ -85,21 +91,25 @@ list(
 ```{r}
 #| content: valuebox
 #| title: "Average Client Satisfaction Score (scale 1-5)"
+#| classes: "ia-dark-box"
+
 list(
   icon = "pass", 
-  color = "primary", 
+  color = "#5CC9FF", 
   value = "5"
   )
 ```
 
-``` {r}
+```{r}
 #| content: valuebox
-#| title: "Net Promoter Score"
+#| title: "Total Economic Impact"
+#| classes: "ia-light-box"
+
 list(
-  icon = "people-fill", 
-  color = "success", 
-  value = "100"
-  )
+  icon = "award",
+  color = "#B8E7FF",
+  value = "$279.3 Million"
+)
 ```
 
 
@@ -117,7 +127,7 @@ totinv_plot <- ggplot(tot_inv) +
   scale_x_discrete(name = " ", limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "$ Invested", limits = c(0,1000000000), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#c8df8e", "#5e9732")) +
+  scale_fill_manual(values = c("#007cba", "#0e2b4d")) +
   plot_theme()
 totinv_plot
 ```
@@ -131,7 +141,7 @@ events_plot <- ggplot(ce_events) +
   scale_x_discrete(name = "Client Satisfaction", limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "Satisfaction Rating (1-5)", limits = c(0,5.1), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  scale_fill_manual(values = c("#0e2b4d", "#007cba")) +
   plot_theme()
 #events_plot
 ```
@@ -146,19 +156,24 @@ events_plot <- ggplot(ce_events) +
 ``` {r}
 #| content: valuebox
 #| title: "Direct Investment"
+#| classes: "ia-light-box"
+
+
 list(
   icon = "piggy-bank", 
-  color = "success", 
-  value = "$1,340,000"
+  color = "#00afaa", 
+  value = "$1.3 Million"
   )
 ```
 
 ```{r}
 #| content: valuebox
 #| title: "Small Businesses Funded (Grants and Loans)"
+#| classes: "ia-dark-box"
+
 list(
   icon = "award-fill",
-  color = "primary",
+  color = "#40c3bf",
   value = 15
 )
 ```
@@ -167,9 +182,11 @@ list(
 ``` {r}
 #| content: valuebox
 #| title: "Small Businesses Receiving Business Consulting Services"
+#| classes: "ia-light-box"
+
 list(
   icon = "door-open", 
-  color = "success", 
+  color = "#80d7d4", 
   value = "390"
   )
 ```
@@ -178,9 +195,11 @@ list(
 ``` {r}
 #| content: valuebox
 #| title: "Small Business Funded in Priority Neighborhoods"
+#| classes: "ia-dark-box"
+
 list(
   icon = "globe-americas", 
-  color = "primary", 
+  color = "#bfebea", 
   value = "53.3%"
   )
 ```
@@ -199,7 +218,7 @@ sbinv_plot <- ggplot(sb_inv) +
   scale_x_discrete(name = "Small Business Investment", limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "Direct Investment ($)", limits = c(0,9000000), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  scale_fill_manual(values = c("#19d3c5", "#009ade")) +
   plot_theme()
 sbinv_plot
 ```
@@ -214,7 +233,7 @@ sbsupport_plot <- ggplot(sb_support) +
                    limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "Number of Small Businesses", limits = c(0,1100), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  scale_fill_manual(values = c("#009ade", "#19d3c5")) +
   plot_theme()
 sbsupport_plot
 ```
@@ -234,7 +253,7 @@ sbind_plot <- ggplot(sb_ind) +
            stat = "identity", width = 1, show.legend = TRUE) +
   coord_polar("y", start = 0) +
   geom_text(aes(x = "", y = ypos, label = label), size = 5, color = "white") +
-  scale_fill_manual(values = c("#5e9732", "#002d56", "#009ddc", "#c8df8e")) +
+  scale_fill_manual(values = c("#19d3c5", "#0e2b4d", "#009ade", "#00afaa")) +
   theme_void() +
     theme(legend.position = 'bottom', legend.text = element_text(size = 12))
 sbind_plot
@@ -249,10 +268,12 @@ sbind_plot
 
 ``` {r}
 #| content: valuebox
-#| title: "Percentage of Projecs in Priority Neighborhoods"
+#| title: "Percentage of Projects in Priority Neighborhoods"
+#| classes: "ia-dark-box"
+
 list(
   icon = "globe-americas",
-  color = "primary",
+  color = "#7dbf52",
   value = "60.4%"
 )
 ```
@@ -261,9 +282,11 @@ list(
 ```{r}
 #| content: valuebox
 #| title: "TAD Financing"
+#| classes: "ia-light-box"
+
 list(
   icon = "piggy-bank", 
-  color = "success", 
+  color = "#9ecf7d", 
   value = "$12.9 Million"
   )
 ```
@@ -271,9 +294,11 @@ list(
 ```{r}
 #| content: valuebox
 #| title: "TAD Project Leveraged Capital"
+#| classes: "ia-dark-box"
+
 list(
   icon = "door-open", 
-  color = "primary", 
+  color = "#bedfa9", 
   value = "$38.1 Million"
   )
 ```
@@ -282,9 +307,11 @@ list(
 ``` {r}
 #| content: valuebox
 #| title: "Invest Atlanta Community Engagement Events"
+#| classes: "ia-light-box"
+
 list(
   icon = "file-person",
-  color = "success",
+  color = "#dfefd4",
   value = "123"
 )
 ```
@@ -314,7 +341,7 @@ nbdn_plot <- ggplot(nb_dn) +
            stat = "identity", width = 1, show.legend = TRUE) +
   coord_polar("y", start = 0) +
   geom_text(aes(x = "", y = ypos, label = label), size = 4, color = "white") +
-  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  scale_fill_manual(values = c("#7dbf52", "#009ade")) +
   theme_void() +
   theme(legend.position = 'bottom', legend.text = element_text(size = 12))
 nbdn_plot
@@ -328,7 +355,7 @@ nbtad_plot <- ggplot(nb_tad) +
   scale_x_discrete(name = "Neighborhood Investment", limits = c("Invest Atlanta", "Total Capital Investment")) +
   scale_y_continuous(name = "Investment ($)", limits = c(0,600000000), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  scale_fill_manual(values = c("#7dbf52", "#009ade")) +
   plot_theme()
 #nbtad_plot
 ```
@@ -341,7 +368,7 @@ nbres_plot <- ggplot(nb_res) +
   scale_x_discrete(name = " ", limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "Attendees", limits = c(0,11000), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#c8df8e", "#5e9732")) +
+  scale_fill_manual(values = c("#7dbf52", "#009ade")) +
   plot_theme()
 nbres_plot
 ```
@@ -362,7 +389,7 @@ nbrev_plot <- ggplot(nb_rev) +
            stat = "identity", width = 1, show.legend = TRUE) +
   coord_polar("y", start = 0) +
   geom_text(aes(x = "", y = ypos, label = label), size = 5, color = "white") +
-  scale_fill_manual(values = c("#002d56", "#009ddc", "#c8df8e")) +
+  scale_fill_manual(values = c("#0e2b4d", "#009ade", "#7dbf52")) +
   labs(fill = "Project Type") +
   theme_void() +
     theme(legend.position = 'bottom', legend.text = element_text(size = 12))
@@ -378,9 +405,11 @@ nbrev_plot
 ``` {r}
 #| content: valuebox
 #| title: "Direct Investment in Affordable Housing"
+#| classes: "ia-light-box"
+
 list(
   icon = "house-add",
-  color = "success",
+  color = "#009ADE",
   value = "$4.5 Million"
 )
 ```
@@ -389,9 +418,11 @@ list(
 ``` {r}
 #| content: valuebox
 #| title: "Total Capital Investment in Affordable Housing"
+#| classes: "ia-dark-box"
+
 list(
   icon = "house-add",
-  color = "primary",
+  color = "#2EC0FF",
   value = "$22.4 Million"
 )
 ```
@@ -400,9 +431,11 @@ list(
 ``` {r}
 #| content: valuebox
 #| title: "Total Affordable Housing Units Financed"
+#| classes: "ia-light-box"
+
 list(
   icon = "house-add",
-  color = "success",
+  color = "#5CCEFF",
   value = "125"
 )
 ```
@@ -411,9 +444,11 @@ list(
 ``` {r}
 #| content: valuebox
 #| title: "Homeownership Incentives (Down Payment, Home Rehab, Tax Relief)"
+#| classes: "ia-dark-box"
+
 list(
   icon = "house-door", 
-  color = "primary", 
+  color = "#B8EAFF", 
   value = 113
   )
 ```
@@ -432,7 +467,7 @@ hsahu_plot <- ggplot(hs_ahu) +
   scale_x_discrete(name = "Affordable Housing Units Funded", limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "Number of Affordable Housing Units", limits = c(0,1150), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  scale_fill_manual(values = c("#0e2b4d", "#009ade")) +
   plot_theme()
 
 hsahu_plot
@@ -447,7 +482,7 @@ hsho_plot <- ggplot(hs_ho) +
   scale_x_discrete(name = " ", limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "Number of Homeowners", limits = c(0,400), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  scale_fill_manual(values = c("#0e2b4d", "#009ade")) +
   plot_theme()
 hsho_plot
 ```
@@ -457,7 +492,7 @@ hsho_plot
 units <- data.frame(years = c('2018','2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'),
                     aff = c(57.3, 55.5, 83.7, 83.0, 94.6, 85.9, 91, 84.1, 100))
 housing_aff <- ggplot(units) +
-  geom_col(aes(x=years, y=aff), fill = "#009DDC", color = "#000000") +
+  geom_col(aes(x=years, y=aff), fill = "#0e2b4d", color = "#fafafa") +
   scale_y_continuous(name = "Affordable Housing Funded (%)", expand = c(0,0)) +
   scale_x_discrete(name = "Year") +
   plot_theme()
@@ -473,9 +508,11 @@ housing_aff
 ``` {r}
 #| content: valuebox
 #| title: "Total Capital Investment (Jobs & Employment)"
+#| classes: "ia-dark-box"
+
 list(
   icon = "door-open", 
-  color = "primary", 
+  color = "#19d3c5", 
   value = "$116.5 Million"
   )
 ```
@@ -483,9 +520,11 @@ list(
 ``` {r}
 #| content: valuebox
 #| title: "Total Jobs Impact"
+#| classes: "ia-light-box"
+
 list(
   icon = "bag-dash-fill", 
-  color = "success", 
+  color = "#53ded3", 
   value = "504"
   )
 ```
@@ -493,9 +532,11 @@ list(
 ```{r}
 #| content: valuebox
 #| title: "Business Development Projects"
+#| classes: "ia-dark-box"
+
 list(
   icon = "building",
-  color = "primary",
+  color = "#8ce9e2",
   value = 18
 )
 ```
@@ -503,9 +544,11 @@ list(
 ```{r}
 #| content: valuebox
 #| title: "Total Economic Impact (Jobs & Employment)"
+#| classes: "ia-light-box"
+
 list(
   icon = "file-earmark-bar-graph-fill",
-  color = "success",
+  color = "#c6f4f0",
   value = "$177.2 Million"
 )
 
@@ -529,7 +572,7 @@ bizdev_plot <- ggplot(biz_dev) +
   scale_x_discrete(name = "Business Development", limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "Number of Closed Projects", limits = c(0,55), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#009ddc", "#002d56")) +
+  scale_fill_manual(values = c("#19d3c5", "#009ade")) +
   plot_theme()
 #bizdev_plot
 ```
@@ -543,7 +586,7 @@ newjobs_plot <- ggplot(new_jobs) +
   scale_x_discrete(name = "Employment Impact", limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "Number of Jobs", limits = c(0,3000), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#5e9732", "#c8df8e")) +
+  scale_fill_manual(values = c("#19d3c5", "#009ade")) +
   plot_theme()
 newjobs_plot
 ```
@@ -558,7 +601,7 @@ goodjobs_plot <- ggplot(good_jobs) +
   scale_x_discrete(name = "New Middle-Wage Jobs", limits = c("2026 YTD", "2026 Goal")) +
   scale_y_continuous(name = "Number of Good Jobs", limits = c(0,1100), 
                      expand = c(0,0), labels = scales::comma) +
-  scale_fill_manual(values = c("#002d56", "#009ddc")) +
+  scale_fill_manual(values = c("#19d3c5", "#c2d500")) +
   plot_theme()
 goodjobs_plot
 ```
@@ -581,7 +624,7 @@ sectors_plot <- ggplot(sectors) +
            stat = "identity", width = 1, show.legend = TRUE) +
   coord_polar("y", start = 0) +
   geom_text(aes(x = "", y = ypos, label = label), size = 3, color = "white") +
-  scale_fill_manual(values = c("#5e9732", "#002d56", "#009ddc", "#c8df8e")) +
+  scale_fill_manual(values = c("#7dbf52", "#0e2b4d", "#009ade", "#19d3c5")) +
   theme_void() +
     theme(legend.position = 'bottom', legend.text = element_text(size = 12))
 sectors_plot

@@ -1,78 +1,29 @@
-/*-- scss:defaults --*/
 
-$theme: "kpi_theme" !default;
+/*-- scss:rules --*/
 
-//
-// Color system
-//
+/* per-box text color workaround */
+.ia-dark-box {
+  color: #1e2226 !important;
+}
 
-$white: #fafafa !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000000 !default;
+.ia-dark-box .value-box-title,
+.ia-dark-box .value-box-value,
+.ia-dark-box .value-box-icon,
+.ia-dark-box svg {
+  color: #1e2226 !important;
+  fill: #1e2226 !important;
+}
 
-$blue:    #033c73 !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #c71c22 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #dd5600 !default;
-$green:   #73a839 !default;
-$teal:    #20c997 !default;
-$cyan:    #2fa4e7 !default;
+.ia-light-box {
+  color: #1e2226 !important;
+}
 
-$ia-primary1: #009ddc !default;
-$ia-primary2: #0070af !default;
-$ia-primary3: #002d56 !default; 
-$ia-secondary1: #c8df8e !default;
-$ia-secondary2: #5e9732 !default;
-$ia-mono1: #7c878e !default;
-$ia-mono2: #dbe2e9 !default;
-
-$primary:       $ia-primary2 !default;
-$secondary:     $gray-200 !default;
-$success:       $green !default;
-$info:          $ia-primary2 !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
-
-$min-contrast-ratio:   2.75 !default;
-
-// Body
-
-$body-bg: $white !default;
-$body-color: $ia-mono1 !default;
-
-// Fonts 
-
-$font-family-sans-serif:  Montserrat, -windows-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$headings-color: $ia-primary2 !default;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.ia-light-box .value-box-title,
+.ia-light-box .value-box-value,
+.ia-light-box .value-box-icon,
+.ia-light-box svg {
+  color: #1e2226 !important;
+  fill: #1e2226 !important;
+}
 
 
